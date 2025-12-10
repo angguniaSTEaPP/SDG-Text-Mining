@@ -47,12 +47,13 @@ corr <- tidy_SDGs %>%
          correlation > 0) 
 
 # Create a sankey diagram 
-cbbPaletteR <- c("Goal 1" = "#E5243B", "Goal 2" = "#DD1367","Goal 3" = "#FD9D24",
-                 "Goal 4" = "#BF8B2E", "Goal 5" = "#3F7E44","Goal 6" = "#0A97D9", 
-                 "Goal 7" = "#56C02B","Goal 8" = "#00689D", "Goal 9" = "#19486A",
-                 "Goal 10" = "#DDA63A","Goal 11" = "#4C9F38", "Goal 12" = "#C5192D", 
-                 "Goal 13" = "#FF3A21", "Goal 14" = "#26BDE2", "Goal 15" = "#FCC30B", 
-                 "Goal 16" = "#A21942","Goal 17" = "#FD6925")
+cbbPaletteR <- c("Goal 1" = "#e5243b", "Goal 2" = "#DDA63A", "Goal 3" = "#4C9F38", 
+                 "Goal 4" = "#C5192D", "Goal 5" = "#FF3A21", "Goal 6" = "#26BDE2", 
+                 "Goal 7" = "#FCC30B", "Goal 8" = "#A21942", "Goal 9" = "#FD6925",
+                 "Goal 10" = "#DD1367", "Goal 11" = "#FD9D24", "Goal 12" = "#BF8B2E", 
+                 "Goal 13" = "#3F7E44", "Goal 14" = "#0A97D9", "Goal 15" = "#56C02B",  
+                 "Goal 16" = "#00689D", "Goal 17" = "#19486A")
+
 corr_show <- corr %>%
   mutate(item1 = paste("Goal", item1), item2 = paste("Goal", item2))
 chordDiagram(corr_show, grid.col = cbbPaletteR)
